@@ -45,7 +45,7 @@ export function HybridEngine() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-display font-bold"
+                        className="text-3xl md:text-5xl font-display font-bold"
                     >
                         The Intuition of AI. The <span className="text-primary">Certainty of Math.</span>
                     </motion.h2>

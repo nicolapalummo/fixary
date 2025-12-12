@@ -111,7 +111,7 @@ export function FlowAnimation() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight"
+                        className="text-4xl md:text-7xl font-display font-bold mb-6 tracking-tight"
                     >
                         Paste. Scan. <span className="text-primary">Fix.</span>
                     </motion.h2>
@@ -120,13 +120,13 @@ export function FlowAnimation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
                     >
                         Run a deterministic audit on your repo in seconds. Uncover the invisible risks lurking in your AI-generated code.
                     </motion.p>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center justify-center gap-0 relative h-[450px] -mt-16">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-0 relative h-[350px] md:h-[450px] -mt-8 md:-mt-16">
 
                     {/* VISIBLE FLOW LINES - SVG Background */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-30">

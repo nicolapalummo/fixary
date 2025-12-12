@@ -17,7 +17,7 @@ export function Hero() {
     };
 
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-24 overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
             <WaitlistModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -96,7 +96,7 @@ export function Hero() {
                             Fixary is currently in Private Beta
                         </motion.div>
 
-                        <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] tracking-tight">
+                        <h1 className="text-4xl md:text-7xl font-display font-bold leading-[1.1] tracking-tight">
                             Turn your Vibe-Coded Idea into an <span className="text-primary inline-block">Enterprise product</span>.
                         </h1>
                         <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">

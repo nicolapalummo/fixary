@@ -59,7 +59,7 @@ export function Problem() {
                     viewport={{ once: true }}
                     className="text-center mb-12 space-y-4"
                 >
-                    <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
                         Your AI-built app looks perfect,
                         <br />
                         <span className="text-primary">but these security flaws are lurking beneath the surface.</span>

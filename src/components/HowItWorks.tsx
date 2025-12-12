@@ -38,7 +38,7 @@ export function HowItWorks() {
         <section id="how-it-works" className="py-24 bg-background relative">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
+                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">
                         How to turn your MVP into a <span className="text-primary">solid product</span>.
                     </h2>
                 </div>
