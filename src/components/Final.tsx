@@ -11,11 +11,25 @@ export function Final() {
         if (!email || !email.includes("@")) return;
         setStatus("loading");
 
-        // Mock API call for landing page demo
-        setTimeout(() => {
-            setStatus("success");
-            setEmail("");
-        }, 1500);
+        try {
+            const response = await fetch('/api/waitlist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setEmail("");
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+        }
     };
 
     return (
