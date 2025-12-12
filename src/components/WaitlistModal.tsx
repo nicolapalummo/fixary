@@ -14,12 +14,14 @@ interface WaitlistModalProps {
 export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
 
     // Reset state when opening
     useEffect(() => {
         if (isOpen) {
             setStatus("idle");
             setEmail("");
+            setErrorMessage("");
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen]);
@@ -40,10 +42,18 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             } else {
                 const data = await response.json();
                 console.error("Waitlist error:", data);
-                setStatus("error");
+                if (response.status === 409) {
+                    // Treat duplicate as success-ish or just show nice message
+                    setErrorMessage("You're already on the list!");
+                    setStatus("error"); // or success if you prefer
+                } else {
+                    setErrorMessage(data.error || "Something went wrong.");
+                    setStatus("error");
+                }
             }
         } catch (error) {
             console.error("Network error:", error);
+            setErrorMessage("Network error. Please try again.");
             setStatus("error");
         }
     };
@@ -131,7 +141,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                             </Button>
                                         </div>
                                         {status === "error" && (
-                                            <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>
+                                            <p className="text-red-400 text-sm">{errorMessage}</p>
                                         )}
                                         <p className="text-xs text-gray-500">
                                             No spam. Unsubscribe anytime.

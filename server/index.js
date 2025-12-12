@@ -53,7 +53,8 @@ app.post('/api/waitlist', async (req, res) => {
             return res.status(409).json({ error: 'Email already in waitlist' });
         }
         console.error('Error adding email to waitlist:', err);
-        res.status(500).json({ error: 'Internal server error' });
+        // Return actual error message for debugging
+        res.status(500).json({ error: err.message || 'Internal server error' });
     }
 });
 
