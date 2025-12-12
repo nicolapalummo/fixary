@@ -53,8 +53,11 @@ app.post('/api/waitlist', async (req, res) => {
             return res.status(409).json({ error: 'Email already in waitlist' });
         }
         console.error('Error adding email to waitlist:', err);
-        // Return actual error message for debugging
-        res.status(500).json({ error: err.message || 'Internal server error' });
+        // debug: return full error details
+        res.status(500).json({
+            error: `DB_ERR: ${err.message || 'Unknown error'}`,
+            details: JSON.stringify(err, Object.getOwnPropertyNames(err))
+        });
     }
 });
 
@@ -66,4 +69,9 @@ app.get(/.*/, (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    if (!process.env.DATABASE_URL) {
+        console.error("CRITICAL: DATABASE_URL is missing!");
+    } else {
+        console.log("DATABASE_URL is found.");
+    }
 });
