@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Fixary ⚡️
+**The Simplest Auditor for Vibe Coders.**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Turn your AI-generated MVP into an Enterprise-grade product.
 
-Currently, two official plugins are available:
+## The Era of Vibe Coding
+We are in the golden age of creation. With tools like **Cursor**, **Windsurf**, and **Replit**, anyone can turn a prompt into an app in hours.
+But speed comes with a hidden tax: **Security Debt**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+AI models hallucinate. They introduce vulnerabilities, use deprecated libraries, and write unscalable logic. You might vibe-code your way to an MVP, but you can't vibe-code your way through a security breach or an App Store rejection.
 
-## React Compiler
+## Enter Fixary
+Fixary is the reality check for the AI coding generation. It is a **Hybrid Auditor** that combines mathematical precision with semantic understanding to secure your codebase in seconds.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### The Hybrid Engine
+We don’t rely on a single layer of analysis. We use a dual-engine approach:
 
-## Expanding the ESLint configuration
+#### 1. The Deterministic Layer (Certainty) 📐
+Running parallel to independent logic, our Static Analysis Engine parses your Abstract Syntax Tree (AST) to enforce mathematical certainties.
+*   **What it catches:** SQL Injections, Hardcoded Secrets, Infinite Loops, Dangerous `eval()` usage.
+*   **Philosophy:** If X exists structurally, flag it. Zero probability involved.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+#### 2. The Audit-Trained LLM (Intuition) 🧠
+An AI model fine-tuned specifically on high-quality code audits and security reports. It reads your repository to grasp architecture, intent, and "code smells."
+*   **What it catches:** Spaghetti code, incoherent logic, unscalable patterns, business logic flaws.
+*   **Philosophy:** Understand the "Why," not just the "How."
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+#### 3. Agentic Synthesis (Velocity) ⚡️
+We don't just dump a PDF of errors on you. Our Agent merges findings from both layers, filters false positives, and generates **ready-to-paste fixes**.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## The Process
+**Paste. Scan. Fix.**
+
+1.  **Paste**: Drop your GitHub repository link. No installation required.
+2.  **Scan**: Our Hybrid Engine analyzes every line of code in an ephemeral environment.
+3.  **Fix**: receive a prioritized report with one-click code solutions.
+
+---
+
+## Privacy First 🔒
+Your code is your IP. We treat it that way.
+
+*   **Ephemeral by Design**: Analysis runs in isolated memory containers that are wiped instantly after specific execution.
+*   **End-to-End Encrypted**: Bank-grade SSL/TLS protects your code in transit.
+*   **No Training**: Your code is **never** used to train our models.
+
+---
+
+## Development
+If you are contributing to the Fixary frontend:
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
