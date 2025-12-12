@@ -41,7 +41,7 @@ export function Navbar() {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Left: Logo */}
                 <div className="flex items-center gap-2">
-                    <img src="/logo-fixary.ico" alt="Fixary" className="h-8 object-contain" />
+                    <img src="/logo-fixary.png" alt="Fixary" className="h-8 object-contain" />
                     <span className="font-display font-light text-xl tracking-tight text-white">Fixary</span>
                 </div>
 
