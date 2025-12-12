@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+gitpython
+pydantic
+openai
+python-dotenv
+semgrep
+requests
+pr-agent
+google-generativeai
+litellm
+sqlalchemy
+aiosqlite
+asyncpg
