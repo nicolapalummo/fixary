@@ -28,10 +28,24 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         if (!email || !email.includes("@")) return;
         setStatus("loading");
 
-        // Mock API call for landing page demo
-        setTimeout(() => {
-            setStatus("success");
-        }, 1500);
+        try {
+            const response = await fetch('/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            });
+
+            if (response.ok) {
+                setStatus("success");
+            } else {
+                const data = await response.json();
+                console.error("Waitlist error:", data);
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error("Network error:", error);
+            setStatus("error");
+        }
     };
 
     return (
