@@ -1,6 +1,4 @@
-export const IconProps = {
-    className: "w-full h-full fill-current"
-};
+
 
 export function IconCursor({ className }: { className?: string }) {
     return (

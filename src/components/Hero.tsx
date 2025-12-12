@@ -1,13 +1,12 @@
 import { motion } from "framer-motion"
 import { useState } from "react";
-import { ArrowRight, Github, ShieldAlert, Sparkles, Loader2 } from "lucide-react";
+import { ArrowRight, Github, ShieldAlert } from "lucide-react";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import { WaitlistModal } from "./WaitlistModal";
 
 export function Hero() {
     const [inputValue, setInputValue] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleAnalyze = async () => {
@@ -128,10 +127,9 @@ export function Hero() {
                                 <Button
                                     size="lg"
                                     onClick={handleAnalyze}
-                                    disabled={isLoading}
                                     className="rounded-[25px] shadow-[0_0_30px_rgba(147,51,234,0.3)] hover:shadow-[0_0_45px_rgba(147,51,234,0.5)] transition-all duration-300"
                                 >
-                                    {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <>Analyze <ArrowRight className="ml-2 w-5 h-5" /></>}
+                                    Analyze <ArrowRight className="ml-2 w-5 h-5" />
                                 </Button>
                             </motion.div>
 
@@ -148,11 +146,11 @@ export function Hero() {
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </div >
 
             {/* Vignette for Fade Effect */}
-            <div className="absolute bottom-0 left-0 w-full pointer-events-none bg-gradient-to-t from-background via-transparent to-transparent h-40 z-20" />
-        </section>
+            < div className="absolute bottom-0 left-0 w-full pointer-events-none bg-gradient-to-t from-background via-transparent to-transparent h-40 z-20" />
+        </section >
     )
 }
 

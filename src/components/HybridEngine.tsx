@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Ruler, Brain, Zap, ShieldCheck, FileCode, CheckCircle2 } from "lucide-react";
+import { Ruler, Brain, Zap, CheckCircle2 } from "lucide-react";
 import { Card } from "./ui/Card";
 
 const features = [

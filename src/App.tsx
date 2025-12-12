@@ -8,7 +8,7 @@ import { FlowAnimation } from "./components/FlowAnimation"
 import { HybridEngine } from "./components/HybridEngine"
 import LiquidEther from "./components/LiquidEther"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { FixaryDashboard } from "./components/FixaryDashboard";
+
 
 function LandingPage() {
   return (
@@ -56,7 +56,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/results/:scanId" element={<FixaryDashboard />} />
+
       </Routes>
     </Router>
   )

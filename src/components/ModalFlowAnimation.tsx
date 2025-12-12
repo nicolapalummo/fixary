@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, ShieldAlert, Bug, Code2, Terminal, AlertTriangle } from "lucide-react";
+import { Zap, ShieldAlert, Bug, Terminal } from "lucide-react";
 
 export function ModalFlowAnimation() {
     // Simplified flow lines for the small header

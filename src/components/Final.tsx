@@ -10,22 +10,12 @@ export function Final() {
     const handleJoin = async () => {
         if (!email || !email.includes("@")) return;
         setStatus("loading");
-        try {
-            const res = await fetch("http://localhost:8000/waitlist", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email })
-            });
-            if (res.ok) {
-                setStatus("success");
-                setEmail("");
-            } else {
-                setStatus("error");
-            }
-        } catch (e) {
-            console.error(e);
-            setStatus("error");
-        }
+
+        // Mock API call for landing page demo
+        setTimeout(() => {
+            setStatus("success");
+            setEmail("");
+        }, 1500);
     };
 
     return (

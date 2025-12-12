@@ -1,5 +1,8 @@
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable react-hooks/purity */
 import { motion } from "framer-motion";
 import type { Transition } from "framer-motion";
+import { useMemo } from "react";
 
 const iconProps = {
     xmlns: "http://www.w3.org/2000/svg",
@@ -226,20 +229,7 @@ export function ComplexAnimVision() {
             />
 
             {/* Rising Particles (Ideas) */}
-            {[...Array(5)].map((_, i) => (
-                <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-yellow-200 rounded-full"
-                    initial={{ y: 20, x: Math.random() * 40 - 20, opacity: 0 }}
-                    animate={{ y: -40, opacity: [0, 1, 0] }}
-                    transition={{
-                        duration: 2 + Math.random(),
-                        repeat: Infinity,
-                        delay: Math.random() * 2,
-                        ease: "easeOut"
-                    }}
-                />
-            ))}
+            <VisionParticles />
 
             <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="z-10 relative">
                 <defs>
@@ -670,4 +660,31 @@ export function ComplexAnimShield() {
 
         </div>
     )
+}
+
+function VisionParticles() {
+    const particles = useMemo(() => [...Array(5)].map(() => ({
+        x: Math.random() * 40 - 20,
+        delay: Math.random() * 2,
+        duration: 2 + Math.random()
+    })), []);
+
+    return (
+        <>
+            {particles.map((p, i) => (
+                <motion.div
+                    key={i}
+                    className="absolute w-1 h-1 bg-yellow-200 rounded-full"
+                    initial={{ y: 20, x: p.x, opacity: 0 }}
+                    animate={{ y: -40, opacity: [0, 1, 0] }}
+                    transition={{
+                        duration: p.duration,
+                        repeat: Infinity,
+                        delay: p.delay,
+                        ease: "easeOut"
+                    }}
+                />
+            ))}
+        </>
+    );
 }

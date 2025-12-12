@@ -21,26 +21,17 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             setStatus("idle");
             setEmail("");
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen]);
 
     const handleJoin = async () => {
         if (!email || !email.includes("@")) return;
         setStatus("loading");
-        try {
-            const res = await fetch("http://localhost:8000/waitlist", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email })
-            });
-            if (res.ok) {
-                setStatus("success");
-            } else {
-                setStatus("error");
-            }
-        } catch (e) {
-            console.error(e);
-            setStatus("error");
-        }
+
+        // Mock API call for landing page demo
+        setTimeout(() => {
+            setStatus("success");
+        }, 1500);
     };
 
     return (
