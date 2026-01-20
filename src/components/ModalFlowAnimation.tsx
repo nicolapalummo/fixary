@@ -59,7 +59,7 @@ export function ModalFlowAnimation() {
                     initial={{ x: -40, opacity: 0, scale: 0.5 }}
                     animate={{
                         x: [0, 600], // Move across
-                        y: [item.y, item.y + (Math.random() * 20 - 10)], // Slight wiggle
+                        y: [item.y, item.y + (i % 2 === 0 ? 10 : -10)], // Slight wiggle
                         opacity: [0, 1, 1, 0],
                         scale: [0.5, 1, 0.5]
                     }}

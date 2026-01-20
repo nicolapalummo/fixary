@@ -27,3 +27,6 @@ dist-ssr
 venv/
 .env
 .env
+
+# Design System Kit (non includere nel deploy)
+fixary-design-kit/
